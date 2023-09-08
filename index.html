@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <h1>Calculator</h1>
+        <div id="inner-top">
+            <input type="text" id="inner-top">
+        </div>
+        <div id="inner-bottom">
+            <div>
+                <button onclick=calc(7) value="7">7</button>
+                <button onclick=calc(8) value="8" >8</button>
+                <button onclick=calc(9) value="9">9</button>
+                <button id="del" onclick=del()>DEL</button>
+            </div>
+            <div>
+                <button onclick=calc(4) value="4">4</button>
+                <button onclick=calc(5) value="5">5</button>
+                <button onclick=calc(6) value="6">6</button>
+                <button onclick="calc('+')" value="+">+</button>
+            </div>
+            <div>
+                <button onclick=calc(1) value="1">1</button>
+                <button onclick=calc(2) value="2">2</button>
+                <button onclick=calc(3) value="3">3</button>
+                <button onclick="calc('-')" value="-">-</button>
+            </div>
+            <div>
+                <button onclick="calc('.')" value=".">.</button>
+                <button onclick=calc(0) value="0">0</button>
+                <button onclick="calc('/')"  value="/">/</button>
+                <button onclick="calc('*')" value="*">*</button>
+            </div>
+            <div>
+                <button id="reset" onclick=reset()>RESET</button>
+                <button id="equal" onclick=result()>=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
