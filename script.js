@@ -1,11 +1,10 @@
-let content = "0"
 let operator = ['+','-','*','/']
-document.getElementById("inner-top").innerHTML = content
+document.getElementById("inner-top").innerHTML = "0"
 
 
 function calc(num){
-    if(content.length>=6) return
-    else if(operator.includes(num)  && operator.includes(content[content.length-1])) return                   //for no 2 operator together
+    let content = document.getElementById("inner-top").innerHTML
+    if(operator.includes(num)  && operator.includes(content[content.length-1])) return                   //for no 2 operator together
     else if(num=='.' && content[content.length-1]=='.') return                                           //for two . together
     else if(content=="0" && (Number(num)>=0 && Number(num)<=9) )  content=""                             // for no 0 at prefix
     
@@ -19,6 +18,7 @@ function reset(){
 }
 
 function del(){
+    let content = document.getElementById("inner-top").innerHTML
     content = content.slice(0,-1)
 
     if(content.length == 0){
@@ -28,9 +28,10 @@ function del(){
     
 }
 function result(){
+    let content = document.getElementById("inner-top").innerHTML
     try{
+        
         let dummy = Number(eval(content))
-
         if(dummy%1 != 0){
             dummy = dummy.toFixed(5)
         }

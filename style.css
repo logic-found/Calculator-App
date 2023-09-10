@@ -33,6 +33,7 @@ body{
     font-size: large;
     color: #FFFFFF;
     overflow: clip;
+    border-radius: 10px;
     
 }
 #inner-bottom{
@@ -40,6 +41,7 @@ body{
     margin: 2%;
     padding: 3%;
     background-color:#252D44;
+    border-radius: 5%;
 }
 #inner-bottom > div{
     display: flex;
