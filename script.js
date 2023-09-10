@@ -4,10 +4,11 @@ document.getElementById("inner-top").innerHTML = content
 
 
 function calc(num){
-    if(operator.includes(num)  && operator.includes(content[content.length-1])) return                   //for no 2 operator together
+    if(content.length>=6) return
+    else if(operator.includes(num)  && operator.includes(content[content.length-1])) return                   //for no 2 operator together
     else if(num=='.' && content[content.length-1]=='.') return                                           //for two . together
     else if(content=="0" && (Number(num)>=0 && Number(num)<=9) )  content=""                             // for no 0 at prefix
-
+    
     content+=num
     document.getElementById("inner-top").innerHTML = content
 }
@@ -28,7 +29,12 @@ function del(){
 }
 function result(){
     try{
-        content = String(eval(content))
+        let dummy = Number(eval(content))
+
+        if(dummy%1 != 0){
+            dummy = dummy.toFixed(5)
+        }
+        content = String(dummy)
     }
     catch(e){
         alert(e)
